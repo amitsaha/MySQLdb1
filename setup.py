@@ -15,6 +15,9 @@ else:  # assume windows
     from setup_windows import get_config
 
 metadata, options = get_config()
+options['extra_compile_args'].append('-fPIC')
+print("\n\n*******" + str(options) + "  ****************************\n\n\n")
+#options/0
 metadata['ext_modules'] = [
     setuptools.Extension(sources=['_mysql.c'], **options)]
 metadata['long_description'] = metadata['long_description'].replace(r'\n', '')
